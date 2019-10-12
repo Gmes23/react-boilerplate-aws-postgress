@@ -1,3 +1,4 @@
 []add to local db
 []add to aws db
-[]create ignore files for hash keys, passwords, api keys
+[]create ignore files for hash keys, passwords, api keys.
+[]finish setting sql database
