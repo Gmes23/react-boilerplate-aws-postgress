@@ -1,4 +1,4 @@
 []add to local db
 []add to aws db
 []create ignore files for hash keys, passwords, api keys.
-[]finish setting sql database
+[]finish setting sql database, can now transfer data files over 
