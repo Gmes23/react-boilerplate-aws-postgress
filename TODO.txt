@@ -2,3 +2,4 @@
 []add to aws db
 []create ignore files for hash keys, passwords, api keys.
 []finish setting sql database, can now transfer data files over 
+- error in postgres local user, using loca user instead of postgres user
