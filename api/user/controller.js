@@ -14,6 +14,7 @@ module.exports = {
   verify: (req, res, next) => {
     res.locals.data.user = req.user
     res.locals.data.isAuth = !!req.user
+    console.log('hitting log in buttin ')
     next()
   },
   create: (req, res, next) => {
@@ -43,6 +44,7 @@ module.exports = {
     req.logout()
     res.locals.data.user = null
     res.locals.data.isAuth = false
+    console.log("hitting logout123")
     next()
   }
 }

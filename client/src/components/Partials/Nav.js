@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom'
 
 const Nav = ({ isAuth }) => (
   <nav>
-    {isAuth ? `You're logged in!` 
+    {isAuth ? 
+    ( 
+    <ul>
+      <li><Link to="/logout"> logout</Link></li>
+    </ul>)
       : (
           <ul>
               <li><Link to="/register">Register</Link></li>

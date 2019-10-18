@@ -3,6 +3,8 @@ import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import Nav from './components/Partials/Nav'
+//i made this
+import Logout from './components/Partials/Logout'
 
 import Auth from './components/Auth'
 import LoginForm from './components/Auth/LoginForm'
@@ -27,9 +29,12 @@ class App extends Component {
       <div className="App">
         <header>
           <Nav isAuth={isAuth} />
+          
         </header>
         <main>
           <Route exact path="/" component={Home} />
+          <Route exact path="/logout" component={Home} />
+
           <Route exact path="/register" render={() => (
             <Auth isAuth={isAuth}>
               <RegisterForm />
