@@ -6,6 +6,9 @@ export const setUser = (user, isAuth) => ({
   isAuth
 })
 
+// i use this method before but i did not invoke the user, isAuth there the function
+// however i think when the these has a user and they are auth this if the prior
+// functions gets called it will clear the user
 export const clearUser = () => ({
   type: TYPES.CLEAR_USER
 })
@@ -41,6 +44,15 @@ export const registerUser = user => dispatch => {
     body: JSON.stringify({ user })
   })
   .then(res => res.json())
+  .then(({ user, isAuth }) => dispatch(setUser(user, isAuth)))
+  .catch(err => console.log(err))
+}
+
+export const logoutUser = user => dispatch => {
+  fetch('/api/user/logout', { credentials: 'include' })
+  .then(res => res.json())
+  //for some reason method setUser is logging the person out instead of clearUser
+  // this is because i think when user is logged in it sets it to true 
   .then(({ user, isAuth }) => dispatch(setUser(user, isAuth)))
   .catch(err => console.log(err))
 }

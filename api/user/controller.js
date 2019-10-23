@@ -41,6 +41,7 @@ module.exports = {
     }
   },
   logout: (req, res, next) => {
+    console.log("is it hitting");
     req.logout()
     res.locals.data.user = null
     res.locals.data.isAuth = false

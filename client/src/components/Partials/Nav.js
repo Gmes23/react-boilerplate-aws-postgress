@@ -5,10 +5,8 @@ const Nav = ({ isAuth }) => (
   <nav>
     {isAuth ? 
     ( 
-    <ul>
-      <li><Link to="/logout"> logout</Link></li>
-    </ul>)
-      : (
+      <p>u are logged in</p>
+    ) : (
           <ul>
               <li><Link to="/register">Register</Link></li>
               <li><Link to="/login">Log In</Link></li>

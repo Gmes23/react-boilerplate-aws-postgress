@@ -29,11 +29,12 @@ class App extends Component {
       <div className="App">
         <header>
           <Nav isAuth={isAuth} />
+          <Logout isAuth={isAuth} />
           
         </header>
         <main>
           <Route exact path="/" component={Home} />
-          <Route exact path="/logout" component={Home} />
+          {/* <Route exact path="/logout" component={Home} /> */}
 
           <Route exact path="/register" render={() => (
             <Auth isAuth={isAuth}>

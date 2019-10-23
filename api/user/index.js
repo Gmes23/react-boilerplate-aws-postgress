@@ -16,7 +16,11 @@ const userRouter = express.Router()
 
 userRouter.get('/', shouldBeLoggedIn, dash, send)
 userRouter.get('/verify', verify, send)
-userRouter.get('/logout', shouldBeLoggedIn, logout, send)
+userRouter.get('/logout', shouldBeLoggedIn, logout, send,
+function(req ) {
+
+  console.log('this is hitting hte /logout')
+})
 
 
 userRouter.post('/register', shouldBeLoggedOut, create, send)
@@ -27,10 +31,11 @@ userRouter.post('/login', shouldBeLoggedOut, passport.authenticate('local', {
 }))
 
 // this was writting by me to log out a users
-// userRouter.post('/logout', shouldBeLoggedIn, logout, send, passport.authenticate('local', {
-//   successRedirect: '/api/user/verify',
-//   failureRedirect: '/api/user/verify',
-//   failureFlash: true
-// }))
+// userRouter.get('/logout', function(req, res) {
+//   req.logOut();
+  
+// }, send
+
+// )
 
 module.exports = userRouter
