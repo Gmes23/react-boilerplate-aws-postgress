@@ -1,11 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Logout from './Logout'
 
 const Nav = ({ isAuth }) => (
   <nav>
     {isAuth ? 
     ( 
-      <p>u are logged in</p>
+      <Logout />
+      // <p>u are logged in</p>
     ) : (
           <ul>
               <li><Link to="/register">Register</Link></li>
