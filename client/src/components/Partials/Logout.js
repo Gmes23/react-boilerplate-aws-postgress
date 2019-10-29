@@ -10,18 +10,18 @@ class Logout extends Component {
       username: '',
       password: ''
     }
-    this.handleFormSubmit = this.handleFormSubmit.bind(this)
+    this.handleLogoutClick = this.handleLogoutClick.bind(this)
   }
 
 
-  handleFormSubmit(evt) {
+  handleLogoutClick(evt) {
     evt.preventDefault()
     this.props.logoutUser(this.state)
   }
 
   render() {
     return (
-      <button onClick={this.handleFormSubmit}>
+      <button onClick={this.handleLogoutClick}>
       logout
       </button>
     )
