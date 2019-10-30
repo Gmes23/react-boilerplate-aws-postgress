@@ -7,3 +7,5 @@
 []log out needs refactoring, log out button should only display when user is logged in
     logging out however does work, and if u click on it when you are not logged in you
     will not be able to access the logoout route regardless
+
+    [] check that logout method is using the logout action in redux
