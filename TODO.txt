@@ -1,7 +1,9 @@
 ### user flow diagram
 
+<<<<<<< HEAD
 -- Homepage
 
 -- user
 
 -- Contact Page
+
