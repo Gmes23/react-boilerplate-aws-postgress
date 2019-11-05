@@ -7,7 +7,6 @@ const Nav = ({ isAuth }) => (
     {isAuth ? 
     ( 
       <Logout />
-      // <p>u are logged in</p>
     ) : (
           <ul>
               <li><Link to="/register">Register</Link></li>

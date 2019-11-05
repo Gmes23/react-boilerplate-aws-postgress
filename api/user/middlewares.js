@@ -1,4 +1,4 @@
-const shouldBeLoggedIn = (req, res, next) => (
+ const shouldBeLoggedIn = (req, res, next) => (
   !req.user
   ? next(new Error('Authorization required'))
   : next()
