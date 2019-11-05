@@ -257,10 +257,3 @@ The client in this app has been bootstrapped with `create-react-app` and thus ha
 - Make sure the proxy in `package.json` matches the port that the server is running on.
 - Any `fetch` request to the backend must have `credentials: 'include'` as part of the request settings. Otherwise, the backend will not have access to `req.user`.
 
-# Acknowledgements & Licensing Details
-
-The passport setup is based on the work of [Vincent Abruzzo](https://github.com/thoughtbyte), who has also been an inspiration and encouragement as I worked on this project. I'd also like to acknowledge [Jason Seminara](https://github.com/jasonseminara) and [Ari Brenner](https://github.com/aribrenner) for the many, many conversations that led to some of the conventions you see here.
-
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>. As such, it _cannot be used in an instructional capacity_ by bootcamps as a part of their curriculum, as that falls under commercial use. Other commercial ventures wishing to build on this base may contact me.
-
-Dragon by Angela Dinh from the Noun Project (a reference, of course, to [The Dragonriders of Pern](https://en.wikipedia.org/wiki/Dragonriders_of_Pern))

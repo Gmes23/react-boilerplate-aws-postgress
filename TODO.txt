@@ -1,9 +1,7 @@
-[x]add to local db
-[]add to aws db
-[x]create ignore files for hash keys, passwords, api keys.
-[x]finish setting sql database, can now transfer data files over 
-- done error in postgres local user, using loca user instead of postgres user
+### user flow diagram
 
-[]log out needs refactoring, log out button should only display when user is logged in
-    logging out however does work, and if u click on it when you are not logged in you
-    will not be able to access the logoout route regardless
+-- Homepage
+
+-- user
+
+-- Contact Page
