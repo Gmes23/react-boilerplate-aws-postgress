@@ -1,9 +1,26 @@
 ### user flow diagram
 
-<<<<<<< HEAD
--- Homepage
+    []Logo
 
--- user
 
--- Contact Page
+NOTE:  adding .everyPAGE means every page should have this option
+
+-- Homepage.everyPAGE
+    [] Logo that takes you home 
+    [] search icon plus search bar
+    [] shopping cart
+    [] account button / login 
+    [] add a favorite tab. instead of adding things to carts add it to favorites
+    [] cart button or heart button 
+    ### user
+        []user sign in 
+            -[] if wrong addresses show it 
+            -[] reset the boxes
+        [] user sign up 
+            -[] if not the right regex show message
+        [] allow users to buy of items, check out items, 
+        [] profile page, shows history
+        
+    -- search button.everyPAGE
+    -- Contact Page.everyPAGE
 
