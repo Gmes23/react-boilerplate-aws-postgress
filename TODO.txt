@@ -1,6 +1,6 @@
 ### user flow diagram
 
-    []Logo
+    []Logo.everyPAGE
 
 
 NOTE:  adding .everyPAGE means every page should have this option

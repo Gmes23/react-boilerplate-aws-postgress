@@ -51,7 +51,7 @@ class LoginForm extends Component {
           onChange={this.handleInputChange}
           value={email}
         />
-        <input type="submit" value="Log in" />
+        <input type="submit" value="Register" />
       </form>
     )
   }

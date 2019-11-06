@@ -2,12 +2,11 @@ import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import Nav from './components/Partials/Nav'
 
+import Nav from './components/Partials/Nav'
 import Auth from './components/Auth'
 import LoginForm from './components/Auth/LoginForm'
 import RegisterForm from './components/Auth/RegisterForm'
-
 import Home from './components/Home'
 
 import { verifyUser } from './actions/auth'
