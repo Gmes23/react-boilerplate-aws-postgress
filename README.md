@@ -1,6 +1,6 @@
-![pern-stack](https://user-images.githubusercontent.com/12768542/37250285-15cb7da8-24c7-11e8-97a5-33d613f3865b.jpg)
 
-# PERN Stack Base
+
+# PERN Stack Boilerplate
 
 This app is a boilerplate for a Postgres/Express/React/Node app with basic authentication built in, using Passport and sessions.
 
