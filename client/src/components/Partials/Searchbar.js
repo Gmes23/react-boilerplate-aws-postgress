@@ -2,18 +2,28 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 class Searchbar extends Component {
-    state = {
-        initialSearch: [],
-
+    constructor(props) {
+        super(props);
+        this.state = {
+            search: '',
+        }
+        this.handleSearchChange =  this.handleSearchChange.bind(this);
     }
 
-    
+
+
+    handleSearchChange = (e) => {
+        this.setState({
+            search: e.target.value
+        });
+    }
+
     render() {
         console.log(this.state)
         return (
             <div>
                 <form>
-                    <input type="text" placeholder="search bar" onChange={this.state} />
+                    <input type="text" placeholder="Search" onChange={this.handleSearchChange} />
                 </form>
             </div>
         )
