@@ -13,8 +13,8 @@ class Logout extends Component {
     this.handleLogoutClick = this.handleLogoutClick.bind(this)
   }
 
-  handleLogoutClick(evt) {
-    evt.preventDefault()
+  handleLogoutClick(e) {
+    e.preventDefault()
     this.props.logoutUser(this.state)
   }
 

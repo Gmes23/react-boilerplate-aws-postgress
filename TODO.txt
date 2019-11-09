@@ -24,3 +24,11 @@ NOTE:  adding .everyPAGE means every page should have this option
     -- search button.everyPAGE
     -- Contact Page.everyPAGE
 
+- LONG TERM
+    - ADMIN PANEL
+        -admin own route to log in
+        -
+- Easy TODO
+    - move logout partial to auth
+    -make user profile page
+    - look for key shortcuts like class creat short cut

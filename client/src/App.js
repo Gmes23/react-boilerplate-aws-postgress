@@ -6,6 +6,12 @@ import { connect } from 'react-redux'
 import Nav from './components/Partials/Nav'
 import Searchbar from './components/Partials/Searchbar'
 
+// Admin
+import Admin from './components/Admin/Admin'
+
+// User Profile Page, All features for an Authenticated User, Purchased History, Authenticated User Cart
+import UserProfilePage from './components/UserPage/UserProfilePage'
+
 // Auth
 import Auth from './components/Auth'
 import LoginForm from './components/Auth/LoginForm'
@@ -14,7 +20,7 @@ import RegisterForm from './components/Auth/RegisterForm'
 // Components
 import Home from './components/Home'
 
-
+// Actions 
 import { verifyUser } from './actions/auth'
 
 class App extends Component {
@@ -47,6 +53,10 @@ class App extends Component {
               <LoginForm />
             </Auth>
           )} />
+
+          <Route exact path="/admin" component={Admin} />
+
+          <Route exact path="/User" component={UserProfilePage} />
         </main>
       </div>
     )
