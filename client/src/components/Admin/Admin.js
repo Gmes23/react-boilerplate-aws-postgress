@@ -4,11 +4,9 @@ class Admin extends Component {
 
     render() {
        return(
-
-
-        <div>
-            Adming Page
-        </div>
+            <div>
+                Adming Page.
+            </div>
        )
     }
 }
