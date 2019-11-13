@@ -6,6 +6,9 @@ import { connect } from 'react-redux'
 import Nav from './components/Partials/Nav'
 import Searchbar from './components/Partials/Searchbar'
 
+// this is the store carts, this might later be moved to Partials
+import StoreCart from './components/StoreCart/StoreCart'
+
 // Admin
 import Admin from './components/Admin/Admin'
 
@@ -23,6 +26,8 @@ import Home from './components/Home'
 // Actions 
 import { verifyUser } from './actions/auth'
 
+
+
 class App extends Component {
   componentDidMount() {
     this.props.verifyUser()
@@ -39,6 +44,7 @@ class App extends Component {
         <header>
           <Nav isAuth={isAuth} />
           <Searchbar />
+          <StoreCart />
         </header>
         <main>
           <Route exact path="/" component={Home} />
