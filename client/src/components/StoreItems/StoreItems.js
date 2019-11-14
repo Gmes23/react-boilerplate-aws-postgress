@@ -12,13 +12,17 @@ class StoreItems extends Component {
         }
     }
 
+    handleClickAddToCart(){
+      alert("click")
+    }
+    
     render() {
         let items = this.state.items.map((item) => {
             return <li key={item.id}>
               <div>{item.name}</div>
               <div>{item.price}</div>
               <div>{item.picture}</div>
-              <button>add to cart</button>
+              <button onClick={() => this.handleClickAddToCart()}>add to cart</button>
             </li>
           });
           return (
