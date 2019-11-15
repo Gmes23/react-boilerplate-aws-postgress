@@ -9,7 +9,10 @@ export const history = createHistory()
 const initialState = {
   auth: {
     user: null,
-    isAuth: false
+    isAuth: false,
+  },
+  storeCart: {
+    cart: {}
   }
 }
 

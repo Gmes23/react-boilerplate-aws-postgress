@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { addItem } from '../../actions/shoppingCart.js'
 
 class StoreItems extends Component {
     constructor(props){
@@ -12,8 +14,9 @@ class StoreItems extends Component {
         }
     }
 
-    handleClickAddToCart(){
-      alert("click")
+    handleClickAddToCart(item){
+        console.log(item)
+      addItem(item);
     }
     
     render() {
@@ -22,7 +25,7 @@ class StoreItems extends Component {
               <div>{item.name}</div>
               <div>{item.price}</div>
               <div>{item.picture}</div>
-              <button onClick={() => this.handleClickAddToCart()}>add to cart</button>
+              <button onClick={() => this.handleClickAddToCart(item)}>add to cart</button>
             </li>
           });
           return (
@@ -33,4 +36,9 @@ class StoreItems extends Component {
     }
 }
 
-export default StoreItems;
+const mapStatetoProps = state => state;
+const mapDispatchToProps = dispatch => ({
+    addItem: (item) => dispatch(addItem(item))
+})
+
+export default connect(mapStatetoProps, mapDispatchToProps)(StoreItems);
