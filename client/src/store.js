@@ -10,6 +10,8 @@ const initialState = {
   auth: {
     user: null,
     isAuth: false,
+    //testing redux state
+    test: false
   },
   storeCart: {
     cart: {}
