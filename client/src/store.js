@@ -4,6 +4,9 @@ import createHistory from 'history/createBrowserHistory'
 import thunk from 'redux-thunk'
 import rootReducer from './reducers'
 
+//debugger for redux
+import logger from 'redux-logger'
+
 export const history = createHistory()
 
 const initialState = {
@@ -11,7 +14,7 @@ const initialState = {
     user: null,
     isAuth: false,
   },
-  storeCart: {
+  shoppingCart: {
     cart: {}
   }
 }
@@ -20,7 +23,8 @@ console.log(initialState)
 const enhancers = []
 const middlewares = [
   thunk,
-  routerMiddleware(history)
+  routerMiddleware(history),
+  logger
 ]
 
 const composedEnhancers = compose(
@@ -33,3 +37,4 @@ export default createStore(
   initialState,
   composedEnhancers
 )
+

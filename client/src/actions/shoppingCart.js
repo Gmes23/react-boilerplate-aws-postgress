@@ -7,6 +7,6 @@ export const addItem = (item) =>  ({
     item
 })
 
-// export const addItems = (item) => dispatch => {
-//     item => dispatch(addItem(item))
-// }
+export const addItems = (item) => dispatch => {
+    item => dispatch(addItem(item))
+}

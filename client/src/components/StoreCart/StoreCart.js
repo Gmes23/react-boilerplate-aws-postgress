@@ -1,28 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
-import store from '../../store';
-
 class StoreCart extends Component {
     constructor(props) {
         super(props);
-
-        this.state ={
-            cartItems:[]
-        };
     }
+
+    createListItems() {
+        return console.log(this.props.cartItems)
+    }
+ 
     render() {
         console.log(this.state)
         return (
             <div> 
+                {this.createListItems()}
             </div>
         )
     }
 }
 
 const mapStatetoProps = state => {
-    return console.log(state)
-    
+    return { 
+        cartItems: state.storeCart
+    }
 }
 
 export default connect(mapStatetoProps)(StoreCart);
