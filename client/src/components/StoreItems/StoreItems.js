@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { addItems } from '../../actions/shoppingCart.js'
+import { addItem } from '../../actions/shoppingCart.js'
 
 class StoreItems extends Component {
     constructor(props){
@@ -16,7 +16,7 @@ class StoreItems extends Component {
 
     handleClickAddToCart(item){
         console.log(item)
-      addItems(item);
+      addItem(item);
     }
     
     render() {
@@ -38,7 +38,7 @@ class StoreItems extends Component {
 
 const mapStatetoProps = state => state;
 const mapDispatchToProps = dispatch => ({
-    addItems: (item) => dispatch(addItems(item))
+    addItem: (item) => dispatch(addItem(item))
 })
 
 export default connect(mapStatetoProps, mapDispatchToProps)(StoreItems);
