@@ -42,3 +42,5 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStatetoProps, mapDispatchToProps)(StoreItems);
+
+//move item to global state 

@@ -5,3 +5,4 @@ export const VERIFY_USER = 'VERIFY_USER'
 
 // shopping cart actions
 export const ADD_ITEM = 'ADD_ITEM'
+export const DELETE_ITEM = 'DELETE_ITEM'

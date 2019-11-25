@@ -1,16 +1,15 @@
 import * as TYPES from '../constants/ActionTypes'
 
-export const shoppingCart_reducer = ( state={}, action) => {
-    const { type, shoppingCart } = action
+export const shoppingCart = ( state={}, action) => {
+    const { type, item } = action
     switch(type) {
         case TYPES.ADD_ITEM:
           return {
-            shoppingCart: this.state.item
+            cart: item
           }
         case TYPES.DELETE_ITEM:
           return {
-            user: null,
-            isAuth: false
+            cart: item
           }
         default:
           return state
