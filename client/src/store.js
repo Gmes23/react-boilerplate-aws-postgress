@@ -4,9 +4,6 @@ import createHistory from 'history/createBrowserHistory'
 import thunk from 'redux-thunk'
 import rootReducer from './reducers'
 
-//debugger for redux
-import logger from 'redux-logger'
-
 export const history = createHistory()
 
 const initialState = {
@@ -24,18 +21,18 @@ const enhancers = []
 const middlewares = [
   thunk,
   routerMiddleware(history),
-  logger
 ]
 
 const composedEnhancers = compose(
   applyMiddleware(...middlewares),
-  ...enhancers
+  ...enhancers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()  
+
 )
 
 export default createStore(
   rootReducer,
   initialState,
   composedEnhancers,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
