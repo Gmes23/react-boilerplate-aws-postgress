@@ -11,11 +11,9 @@ const initialState = {
     user: null,
     isAuth: false,
   },
-  shoppingCart: {
-    cart: {}
-  }
+  item: {}
 }
-console.log(initialState)
+console.log(initialState, 'this is the initial state from store')
 
 const enhancers = []
 const middlewares = [
@@ -26,8 +24,8 @@ const middlewares = [
 const composedEnhancers = compose(
   applyMiddleware(...middlewares),
   ...enhancers,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()  
-
+  // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  window.__REDUX_DEVTOOLS_EXTENSION__({ serialize: true, trace: true })
 )
 
 export default createStore(
