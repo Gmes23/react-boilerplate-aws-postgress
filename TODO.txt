@@ -22,7 +22,7 @@ NOTE:  adding .everyPAGE means every page should have this option
         [] profile page, shows history
         
     -- search button.everyPAGE
-    -- Contact Page.everyPAGE
+    -- Contact Page.everyPAGE.
 
 - LONG TERM
     - ADMIN PANEL
