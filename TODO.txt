@@ -31,4 +31,4 @@ NOTE:  adding .everyPAGE means every page should have this option
 - Easy TODO
     - move logout partial to auth
     -make user profile page
-    - look for key shortcuts like class creat short cut
+    - look for key shortcuts like class creat short cut.
