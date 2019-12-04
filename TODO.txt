@@ -18,7 +18,7 @@ NOTE:  adding .everyPAGE means every page should have this option
             -[] reset the boxes
         [] user sign up 
             -[] if not the right regex show message
-        [] allow users to buy of items, check out items, 
+        [] allow users to buy of items, check out items 
         [] profile page, shows history
         
     -- search button.everyPAGE
