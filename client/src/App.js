@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 // Partials 
@@ -26,6 +26,9 @@ import Home from './components/Home'
 // Actions 
 import { verifyUser } from './actions/auth'
 
+// 404 page 
+import NotFound from './components/NotFound/NotFound'
+
 
 
 class App extends Component {
@@ -41,11 +44,10 @@ class App extends Component {
     } = this.props
     return (
       <div className="App">
-        <header>
+        <Switch>
           <Nav isAuth={isAuth} />
           <Searchbar />
           <StoreCart />
-        </header>
         <main>
           <Route exact path="/" component={Home} />
 
@@ -63,7 +65,13 @@ class App extends Component {
           <Route exact path="/admin" component={Admin} />
 
           <Route exact path="/User" component={UserProfilePage} />
+
+          <Route component={NotFound} />
+
+          
+
         </main>
+          </Switch>
       </div>
     )
   }

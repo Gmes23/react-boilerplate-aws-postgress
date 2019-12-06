@@ -36,9 +36,7 @@ class StoreItems extends Component {
     }
 }
 
-const mapStatetoProps = state => state;
-const mapDispatchToProps = dispatch => ({
-    addItem: (item) => dispatch(addItem(item))
-})
-
-export default connect(mapStatetoProps, mapDispatchToProps)(StoreItems);
+// const mapDispatchToProps = (dispatch) => { 
+//   names : dispatch(actions.startGetNames()) 
+// }
+export default connect(null, {addItem})(StoreItems);

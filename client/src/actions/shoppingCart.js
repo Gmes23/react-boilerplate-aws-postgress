@@ -9,9 +9,12 @@ import { SET_ITEM, ADD_ITEM, DELETE_ITEM }from '../constants/ActionTypes'
 //     item,
 // }, console.log('rewrwe'))
 
-// export const addItem = (item) => {
-//     console.log(item, ' this isefrwer')
-// }
+export const addItem = (item) => {
+    console.log(item, ' this isefrwer')
+    // dispatch({
+
+    // })
+}
 
 // export const addItem = (item) => (dispatch) => {
 //     return dispatch(
@@ -31,9 +34,11 @@ import { SET_ITEM, ADD_ITEM, DELETE_ITEM }from '../constants/ActionTypes'
 //     })
 //  }
 
-export const addItem = (item) => (dispatch) => {
-    return dispatch({
-        type: ADD_ITEM,
-        payload: item
-    })
- }
+// export const addItem = (item) => (dispatch) => {
+//     console.log('fetchjing');
+
+//     return dispatch({
+//         type: ADD_ITEM,
+//         payload: item
+//     })
+//  }
