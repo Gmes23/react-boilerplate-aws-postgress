@@ -44,10 +44,11 @@ class App extends Component {
     } = this.props
     return (
       <div className="App">
-        <Switch>
+        <div>
           <Nav isAuth={isAuth} />
           <Searchbar />
           <StoreCart />
+        </div>
         <main>
           <Route exact path="/" component={Home} />
 
@@ -71,7 +72,6 @@ class App extends Component {
           
 
         </main>
-          </Switch>
       </div>
     )
   }
