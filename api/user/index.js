@@ -1,22 +1,32 @@
 const express = require('express')
+const axios = require('axios');
+
+//utils
 const passport = require('../utils/auth/local')
 const send = require('../utils/send')
+
 const {
   dash,
   verify,
   create,
   logout
 } = require('./controller')
+
 const {
   shouldBeLoggedIn,
   shouldBeLoggedOut
 } = require('./middlewares')
 
-const userRouter = express.Router()
+const userRouter = express.Router();
+
+const apiRouter = express.Router();
 
 
-//user routes
-// userRouter.get('/user/:userid', req, res)
+// Routes for the api New York Times
+userRouter.get('/api/nyt/articles', function(req, res) {
+  res.send('sending nyt times');
+  console.Log('nyt hit !')
+})
 
 
 
@@ -36,9 +46,11 @@ userRouter.post('/login', shouldBeLoggedOut, passport.authenticate('local', {
 }))
 
 
-userRouter.get('*', function(req, res){
-  res.send('what???', 404);
-  console.log('this is not a valid page ')
-});
+
+
+// userRouter.get('*', function(req, res){
+//   res.send('what???', 404);
+//   console.log('this is not a valid page ')
+// });
 
 module.exports = userRouter
