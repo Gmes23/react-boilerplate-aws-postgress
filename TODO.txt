@@ -32,3 +32,9 @@ NOTE:  adding .everyPAGE means every page should have this option
     - move logout partial to auth
     -make user profile page
     - look for key shortcuts like class creat short cut
+
+
+- Current TODOS
+    - make api call to retrieve data
+    - render data to home page
+    - allow users to comment, favorite , or delete the favorite article.
