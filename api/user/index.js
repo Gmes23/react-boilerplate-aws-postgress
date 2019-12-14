@@ -19,14 +19,9 @@ const {
 
 const userRouter = express.Router();
 
-const apiRouter = express.Router();
 
 
 // Routes for the api New York Times
-userRouter.get('/api/nyt/articles', function(req, res) {
-  res.send('sending nyt times');
-  console.Log('nyt hit !')
-})
 
 
 
