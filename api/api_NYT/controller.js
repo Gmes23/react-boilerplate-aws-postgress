@@ -2,6 +2,6 @@
 
 module.exports = {
     res: (req, res, next ) => {
-        console.log('got a respong from api');
+        console.log('nyt-api-first route- got a respond from api');
     }
 }
