@@ -37,4 +37,5 @@ NOTE:  adding .everyPAGE means every page should have this option
 - Current TODOS
     - make api call to retrieve data
     - render data to home page
-    - allow users to comment, favorite , or delete the favorite article.
+    - allow users to comment, favorite , or 
+        delete the favorite article.

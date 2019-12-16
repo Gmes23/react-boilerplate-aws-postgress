@@ -7,6 +7,6 @@ const apiRouter = express.Router()
 apiRouter.use('/user', require('./user'));
 
 // This is for the New York Times route 
-apiRouter.use('/nyt', require('./api_NYT'));
+apiRouter.use('/news', require('./api_News'));
 
 module.exports = apiRouter

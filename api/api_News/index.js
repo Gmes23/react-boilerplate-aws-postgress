@@ -10,14 +10,14 @@ const { res } = require('./controller');
 
 
 
-const nytRouter = express.Router();
+const newsRouter = express.Router();
 
 
 // homes routes
-nytRouter.get('/', res, send);
+newsRouter.get('/', res, send);
 
-// Get Articles From New York Times API
-// nytRouter.get('/', res, send);
+// Gets articles from NEWSAPI.ORG
+nytRouter.get('/newsArticles', res, send);
 
 
 
