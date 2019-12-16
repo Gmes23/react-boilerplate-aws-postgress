@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
 
 
-
 // Refactor to customHook and add to database
 
 function Admin() {

@@ -16,6 +16,10 @@ const nytRouter = express.Router();
 // homes routes
 nytRouter.get('/', res, send);
 
+// Get Articles From New York Times API
+// nytRouter.get('/', res, send);
+
+
 
 
 module.exports = nytRouter

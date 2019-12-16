@@ -54,8 +54,10 @@ class StoreItems extends Component {
   }
 
 
-  componentDidMount() {
-    const response = axios.get('/api/nyt')
+  async componentDidMount() {
+    // const response = axios.get('/api/nyt')
+    const response = await axios.get('https://api.nytimes.com/svc/' +
+                      'topstories/v2/business.json?api-key=KcLfQgnFF7UtNmKKpX6dpwgynBGbXFFF')
     console.log(response)
     // const items = response.data
     // this.setState({items: items}) // or this.setState({toDoItems})
