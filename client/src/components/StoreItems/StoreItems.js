@@ -65,7 +65,7 @@ class StoreItems extends Component {
   }
 
   handleClickAddToCart(item){
-      console.log(item)
+      console.log(this.state)
     // addItem(item);
   }
   
