@@ -5,7 +5,10 @@ const axios = require('axios');
 const send = require('../utils/send');
 
 //controllers
-const { res } = require('./controller');
+const { 
+    res,
+    favorite
+ } = require('./controller');
 
 
 
@@ -16,9 +19,9 @@ const newsRouter = express.Router();
 newsRouter.get('/', res, send);
 
 // Gets articles from NEWSAPI.ORG
-newsRouter.get('/newsArticles', res, send);
+newsRouter.get('/favorite', favorite, send);
 
 
 
 
-module.exports = nytRouter
+module.exports = newsRouter

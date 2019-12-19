@@ -59,14 +59,14 @@ class StoreItems extends Component {
     const response = await axios.get('https://newsapi.org/v2/top-headlines' 
                         + '?sources=associated-press,entertainment-weekly' 
                         + '&apiKey=a693881ff8804807bbe20a00b7b14006')
-    console.log(response.data.articles)
+    // console.log(response.data.articles)
     const items = response.data.articles
     this.setState({items: items}) // or this.setState({toDoItems})
   }
 
   handleClickAddToCart(item){
-      console.log(this.state)
-    // addItem(item);
+    console.log(item)
+    addItem(item);
   }
   
   render() {
@@ -88,7 +88,8 @@ class StoreItems extends Component {
   }
 }
 
-// const mapDispatchToProps = (dispatch) => { 
-//   names : dispatch(actions.startGetNames()) 
-// }
-export default connect(null, {addItem})(StoreItems);
+const mapDispatchToProps = (dispatch) => ({ 
+  addItem: (item) => dispatch(addItem(item))
+});
+
+export default connect(mapDispatchToProps)(StoreItems);

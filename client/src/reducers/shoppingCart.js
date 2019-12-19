@@ -1,4 +1,4 @@
-import { SET_ITEM, ADD_ITEM, DELETE_ITEM } from '../constants/ActionTypes';
+// import { SET_ITEM, ADD_ITEM, DELETE_ITEM } from '../constants/ActionTypes';
 // import * as TYPES from '../constants/ActionTypes'
 
 
@@ -33,26 +33,14 @@ const initialState = {
     items: {}
 }
 
-export default function(state = initialState, action) {
+const shoppingCart = (state = initialState, action) => {
     switch(action.type) {
-        case SET_ITEM:
-            return {
-                ...state,
-                items: action.payload
-            };
-        case ADD_ITEM:
-          console.log('its hittinh ')
-            return {
-                ...state,
-                item: action.payload
-            };
-
-            case DELETE_ITEM:
-                return {
-                    ...state,
-                    item: action.payload
-                };
+        case 'ADD_ITEM':
+            console.log(action.item)
+            return action.item  
         default:
             return state;
     }
-}
+};
+
+export default shoppingCart;
