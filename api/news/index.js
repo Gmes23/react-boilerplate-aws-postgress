@@ -19,7 +19,7 @@ const newsRouter = express.Router();
 newsRouter.get('/', res, send);
 
 // Gets articles from NEWSAPI.ORG
-newsRouter.get('/favorite', favorite, send);
+newsRouter.post('/favorite', favorite, send);
 
 
 

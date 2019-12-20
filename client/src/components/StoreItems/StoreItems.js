@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { addItem } from '../../actions/shoppingCart.js';
+import { fetchProducts } from '../../actions/shoppingCart.js';
 import axios from 'axios';
 
 
@@ -44,7 +44,9 @@ import axios from 'axios';
 // export default connect(null, {addItem})(StoreItems);
 
 
-
+// right now axios gets an array of items 20, and then on click we set the new state 
+// to all of this 20 items then we send all these items to the database with redux, 
+// this should be changed so that only one item is end
 class StoreItems extends Component {
   constructor(props){
       super(props);
@@ -61,12 +63,15 @@ class StoreItems extends Component {
                         + '&apiKey=a693881ff8804807bbe20a00b7b14006')
     // console.log(response.data.articles)
     const items = response.data.articles
-    this.setState({items: items}) // or this.setState({toDoItems})
+    this.setState({items: items }) // or this.setState({toDoItems})
   }
 
   handleClickAddToCart(item){
+    // console.log(item)
+    // this.props.fetchProducts(this.state)
+    this.props.fetchProducts(item)
+
     console.log(item)
-    addItem(item);
   }
   
   render() {
@@ -88,8 +93,14 @@ class StoreItems extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({ 
-  addItem: (item) => dispatch(addItem(item))
-});
+const mapStateToProps = state => state
+const mapDispatchToProps = dispatch => ({
+  fetchProducts: (item) => dispatch(fetchProducts(item))
+})
 
-export default connect(mapDispatchToProps)(StoreItems);
+// const mapDispatchToProps = dispatch => ({
+//   onClick: () => dispatch(fetchProducts(id))
+// })
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(StoreItems);
