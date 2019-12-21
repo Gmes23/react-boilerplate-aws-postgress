@@ -39,3 +39,7 @@ NOTE:  adding .everyPAGE means every page should have this option
     - render data to home page
     - allow users to comment, favorite , or 
         delete the favorite article.
+
+        -- TODO
+        make sure user profile page only loads articles that user has saved
+        study, psql syntax

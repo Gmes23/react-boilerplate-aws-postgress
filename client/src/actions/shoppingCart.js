@@ -91,7 +91,9 @@
 
 
 export function fetchProducts(item) {
-    return dispatch => {
+    return (dispatch, getState) => {
+        const userDetails = getState();
+        console.log(userDetails)
         console.log(item, 'fetchProducts action')
 
       dispatch(fetchProductsBegin());
