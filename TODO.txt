@@ -7,9 +7,6 @@ NOTE:  adding .everyPAGE means every page should have this option
 
 -- Homepage.everyPAGE
     [] Logo that takes you home 
-    [] search icon plus search bar
-    [] shopping cart
-    [] account button / login 
     [] add a favorite tab. instead of adding things to carts add it to favorites
     [] cart button or heart button 
     ### user
@@ -28,18 +25,18 @@ NOTE:  adding .everyPAGE means every page should have this option
     - ADMIN PANEL
         -admin own route to log in
         -
-- Easy TODO
-    - move logout partial to auth
-    -make user profile page
-    - look for key shortcuts like class creat short cut
+- Current TODOS for databse 
 
-
-- Current TODOS
-    - make api call to retrieve data
-    - render data to home page
     - allow users to comment, favorite , or 
         delete the favorite article.
 
-        -- TODO
-        make sure user profile page only loads articles that user has saved
-        study, psql syntax
+- TODO Current
+    - make user profile page
+    - have it display articles saved
+        - get respond from database into express route,
+            - render it into the react component
+            - then render that users info into that component
+    - use redux to make sure this component is only accesible when
+        a user is authenticated
+
+    - make sure its not accesible if a user is not authenticated
