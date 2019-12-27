@@ -3,6 +3,11 @@ import { connect } from 'react-redux';
 import { fetchProducts } from '../../actions/shoppingCart.js';
 import axios from 'axios';
 
+/*
+  THIS GETS ITEMS FROM THE API AND RENDERS IT TO THE
+  COMPONENT, SHOULD BE CHANGED AS REDUX SHOULD BE FETCHING 
+  DATA FROM THE CONTROLLER ROUTE
+*/
 
 // class StoreItems extends Component {
 //     constructor(props){

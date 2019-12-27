@@ -42,3 +42,7 @@ NOTE:  adding .everyPAGE means every page should have this option
     - make sure its not accesible if a user is not authenticated
 
     - reorganize and reword shopping cart redux components.
+
+
+    - time thurs dec 26 - 6:37pm start
+        `current task get user data from db 
