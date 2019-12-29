@@ -11,19 +11,37 @@ class UserProfilePage extends Component {
     }
 
     async componentDidMount() {
-        const getArticles = await fetch('http://localhost:3000/api/news/savedArticles',
+        // const getArticles = await fetch('/api/news/savedArticles',
+        // { 
+        // credentials: 'include',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //      }, 
+        // })
+        //     .then(function(response) {
+        //     console.log(JSON.stringify(response))
+        //   });
+        // console.log('this is getArticles from CDM in userProfilePage', getArticles)
+        // const savedArticles = getArticles
+        // this.setState({ savedArticles: savedArticles })
+        const getArticles =  await fetch('http://localhost:3100/api/news/savedArticles',
         { 
-        credentials: 'include',
-            headers: {
-                'Content-Type': 'application/json'
-             }, 
-        })
-            .then(function(response) {
-            console.log(JSON.stringify(response))
-          });
-        console.log('this is getArticles from CDM in userProfilePage', getArticles)
-        const savedArticles = getArticles
-        this.setState({ savedArticles: savedArticles })
+            credentials: 'include',
+            method: 'GET',
+             headers: {
+                 'Content-Type': 'application/json'
+              }})
+         .then(handleErrors)
+         .then(res => res.json())
+        // fetch('/news/savedArticles', { credentials: 'include' })
+        // .then(res => res.json())
+        function handleErrors(response) {
+            if (!response.ok) {
+              throw Error(response.statusText);
+            }
+            return response;
+          }
+        
     }
 
     render() {
