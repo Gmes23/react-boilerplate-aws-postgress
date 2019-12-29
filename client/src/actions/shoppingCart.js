@@ -89,6 +89,32 @@
 //     })
 //  }
 
+export function getProducts(item) {
+  return (dispatch, getState) => {
+      const userDetails = getState();
+      console.log(userDetails)
+      console.log(item, 'getProducts action')
+
+    dispatch(fetchProductsBegin());
+    return fetch('/api/news/savedArticles',
+     { 
+         credentials: 'include',
+         method: 'GET',
+          headers: {
+              'Content-Type': 'application/json'
+           },
+      body: JSON.stringify({ item })} )
+      .then(handleErrors)
+      .then(res => res.json())
+      .then(json => {
+        dispatch(fetchProductsSuccess(json.products));
+        return json.products;
+      })
+      .catch(error => dispatch(fetchProductsFailure(error)));
+  };
+}
+
+
 
 export function fetchProducts(item) {
     return (dispatch, getState) => {

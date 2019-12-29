@@ -19,7 +19,6 @@
     "pg-promise": "^8.1.1",
     "redis": "^2.8.0"
   },
-  "proxy": "http://localhost:3100",
   "devDependencies": {
     "jest": "^25.0.0",
     "nodemon": "^1.19.4",

@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Axios from 'axios';
 
+import { getProducts } from '../../actions/shoppingCart'
+
+
 class UserProfilePage extends Component {
     constructor(props) {
         super(props);
@@ -11,37 +14,8 @@ class UserProfilePage extends Component {
     }
 
     async componentDidMount() {
-        // const getArticles = await fetch('/api/news/savedArticles',
-        // { 
-        // credentials: 'include',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //      }, 
-        // })
-        //     .then(function(response) {
-        //     console.log(JSON.stringify(response))
-        //   });
-        // console.log('this is getArticles from CDM in userProfilePage', getArticles)
-        // const savedArticles = getArticles
-        // this.setState({ savedArticles: savedArticles })
-        const getArticles =  await fetch('http://localhost:3100/api/news/savedArticles',
-        { 
-            credentials: 'include',
-            method: 'GET',
-             headers: {
-                 'Content-Type': 'application/json'
-              }})
-         .then(handleErrors)
-         .then(res => res.json())
-        // fetch('/news/savedArticles', { credentials: 'include' })
-        // .then(res => res.json())
-        function handleErrors(response) {
-            if (!response.ok) {
-              throw Error(response.statusText);
-            }
-            return response;
-          }
-        
+        this.props.getProducts()
+        console.log(this.props)
     }
 
     render() {
@@ -68,4 +42,12 @@ class UserProfilePage extends Component {
     }
 }
 
-export default UserProfilePage
+const mapStateToProps = state => ({
+    ...state
+})
+
+const mapDispatchToProps = dispatch => ({
+    getProducts: () => dispatch(getProducts())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps )(UserProfilePage);
