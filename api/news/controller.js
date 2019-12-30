@@ -44,23 +44,36 @@ module.exports = {
 Instead, you should use method task, which allocates and releases the connection only once, providing a connection context well suited for executing multiple queries at once:
 */
     savedArticles: (req, res, next) => {
-        const userSaveArticles = [
-            36
-        ]
 
-            // (
-        //      body, user_id, date_created
-        //      ) 
-        db.query(`SELECT * FROM products WHERE user_id=36`, (db_err, db_res) => {
-                if( db_err) return next(db_err);
-                else {return console.log(db_res,'hi ')}
-                // console.log('testing what im queryying savedArticles backend route')
-                // console.log(res, ' this is res res from query234')
-            //    return console.log(res.json(db_res), 'this is line 58 in controller news .js')
-                // console.log(db_res, 'this is the get saved user articles respond')
-            }).catch(err=>next(err))
-            // console.log(req, 'this is res from savedArticles node route')
+            db.query('SELECT * FROM products WHERE user_id=36', (error, results) => {
+              if (error) {
+                throw error
+              }
+              console.log(req, 'this is res from savedArticles line 52')
+
+              console.log(res, 'this is res from savedArticles line 54')
+              res.status(200).json(results.rows)
+              console.log(results, 'this is results from savedArticles express route')
+            })
+            next()
+
     }
+    //         36
+    //     ]
+
+    //         // (
+    //     //      body, user_id, date_created
+    //     //      ) 
+    //     db.query(`SELECT * FROM products WHERE user_id=36`, (db_err, db_res) => {
+    //             if( db_err) return next(db_err);
+    //             else {return console.log(db_res,'hi ')}
+    //             // console.log('testing what im queryying savedArticles backend route')
+    //             // console.log(res, ' this is res res from query234')
+    //         //    return console.log(res.json(db_res), 'this is line 58 in controller news .js')
+    //             // console.log(db_res, 'this is the get saved user articles respond')
+    //         }).catch(err=>next(err))
+    //         // console.log(req, 'this is res from savedArticles node route')
+    // }
 
 
 }
