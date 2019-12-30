@@ -14,8 +14,10 @@ class UserProfilePage extends Component {
     }
 
     async componentDidMount() {
-        this.props.getProducts()
-        console.log(this.props)
+        fetch('/api/news/savedArticles')
+        .then(response => response.json())
+        this.props.dispatch(getProducts())
+        console.log(this.props, 'this is props from CDM of userprofilepage componentx')
     }
 
     render() {
@@ -43,11 +45,11 @@ class UserProfilePage extends Component {
 }
 
 const mapStateToProps = state => ({
-    ...state
-})
+    products: state
+  });
 
-const mapDispatchToProps = dispatch => ({
-    getProducts: () => dispatch(getProducts())
-})
+// const mapDispatchToProps = dispatch => ({
+//     getProducts: () => dispatch(getProducts())
+// })
 
-export default connect(mapStateToProps, mapDispatchToProps )(UserProfilePage);
+export default connect(mapStateToProps)(UserProfilePage);

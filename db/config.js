@@ -2,7 +2,7 @@ require('dotenv').config()
 
 const options = {
   query: (e) => {
-    console.log(e.query)
+    console.log(e.query, 'this is e.query from config.js')
   }
 }
 

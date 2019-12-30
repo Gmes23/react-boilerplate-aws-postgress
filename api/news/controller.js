@@ -51,11 +51,15 @@ Instead, you should use method task, which allocates and releases the connection
             // (
         //      body, user_id, date_created
         //      ) 
-        db.query(`SELECT * FROM products WHERE user_id=36;`, (db_err, db_res) => {
+        db.query(`SELECT * FROM products WHERE user_id=36`, (db_err, db_res) => {
                 if( db_err) return next(db_err);
-                res.json(db_res)
-                console.log(db_res, 'this is the get saved user articles respond')
+                else {return console.log(db_res,'hi ')}
+                // console.log('testing what im queryying savedArticles backend route')
+                // console.log(res, ' this is res res from query234')
+            //    return console.log(res.json(db_res), 'this is line 58 in controller news .js')
+                // console.log(db_res, 'this is the get saved user articles respond')
             }).catch(err=>next(err))
+            // console.log(req, 'this is res from savedArticles node route')
     }
 
 

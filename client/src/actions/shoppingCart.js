@@ -89,30 +89,37 @@
 //     })
 //  }
 
-export function getProducts(item) {
-  return (dispatch, getState) => {
-      const userDetails = getState();
-      console.log(userDetails)
-      console.log(item, 'getProducts action')
+// export function getProducts(item) {
+//   return (dispatch, getState) => {
+//       const userDetails = getState();
+//       console.log(JSON.stringify(item), 'getProducts action ')
 
-    dispatch(fetchProductsBegin());
-    return fetch('/api/news/savedArticles',
-     { 
-         credentials: 'include',
-         method: 'GET',
-          headers: {
-              'Content-Type': 'application/json'
-           },
-      body: JSON.stringify({ item })} )
-      .then(handleErrors)
-      .then(res => res.json())
-      .then(json => {
-        dispatch(fetchProductsSuccess(json.products));
-        return json.products;
-      })
-      .catch(error => dispatch(fetchProductsFailure(error)));
-  };
-}
+//     dispatch(fetchProductsBegin());
+//     return fetch('/api/news/savedArticles',
+//      { 
+//          credentials: 'include',
+//          method: 'GET',
+//           headers: {
+//               'Content-Type': 'application/json'
+//            },
+//       body: JSON.stringify({ item })} )
+//       .then(handleErrors)
+//       // .then(res => res.json())
+//       .then(res => res.json() 
+//       )
+
+//       .then(json => {
+//         // dispatch(fetchProductsSuccess(json.products));
+//         console.log(json, 'this is json from getProducts')
+//         // return json.products;
+//       }) .then(json => {
+//         dispatch(fetchProductsSuccess(json.products));
+//         return console.log(
+//      'this is the res json.products from savearticles', json.products)
+//       })
+//       .catch(error => dispatch(fetchProductsFailure(error)));
+//   };
+// }
 
 
 
@@ -141,6 +148,36 @@ export function fetchProducts(item) {
     };
   }
   
+
+
+export function getProducts(item) {
+  return (dispatch, getState) => {
+      const userDetails = getState();
+      console.log(userDetails)
+      console.log(item, ' getproducts')
+
+    dispatch(fetchProductsBegin());
+    return fetch('/api/news/savedArticles',
+     { 
+         credentials: 'include',
+         method: 'GET',
+          headers: {
+              'Content-Type': 'application/json'
+           },
+      body: JSON.stringify({ item })} )
+      .then(handleErrors)
+      .then(res => res.json())
+      .then(json => {
+        dispatch(fetchProductsSuccess(json.products));
+        return json.products;
+      })
+      .then(json => {
+        dispatch(fetchProductsSuccess(json.products));
+        return console.log(json.products);
+      })
+      .catch(error => dispatch(fetchProductsFailure(error)));
+  };
+}
 //   Handle HTTP errors since fetch won't.
   function handleErrors(response) {
     if (!response.ok) {
@@ -248,7 +285,7 @@ export const fetchProductsFailure = error => ({
         return {
           ...state,
           loading: false,
-          items: action.payload.products
+          items: action.payload.products,
         };
   
       case FETCH_PRODUCTS_FAILURE:
