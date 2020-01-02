@@ -46,11 +46,12 @@ Instead, you should use method task, which allocates and releases the connection
     savedArticles: (req, res, next) => {
         // const post_id = req.user.id
 
-        db.query(`SELECT * FROM products`, (q_err, q_res) => {
-                      console.log(res.json(q_res.rows))
-                      console.log(q_res, ' this is res from 54 ')
-
-            })
+        db.one('SELECT * FROM users', (error, results) => {
+            if (error) {
+              throw console.log(error, 'this is error from saved ARticles')
+            }
+            console.log(results, ' this are results')
+          })
             // console.log(res , ' this is res from 54 ')
 
         // const userDetails = [ req.user.id ]
