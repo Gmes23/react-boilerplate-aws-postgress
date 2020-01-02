@@ -44,18 +44,28 @@ module.exports = {
 Instead, you should use method task, which allocates and releases the connection only once, providing a connection context well suited for executing multiple queries at once:
 */
     savedArticles: (req, res, next) => {
+        // const post_id = req.user.id
 
-            db.query('SELECT * FROM products WHERE user_id=36', (error, results) => {
-              if (error) {
-                throw error
-              }
-              console.log(req, 'this is res from savedArticles line 52')
+        db.query(`SELECT * FROM products`, (q_err, q_res) => {
+                      console.log(res.json(q_res.rows))
+                      console.log(q_res, ' this is res from 54 ')
 
-              console.log(res, 'this is res from savedArticles line 54')
-              res.status(200).json(results.rows)
-              console.log(results, 'this is results from savedArticles express route')
             })
-            next()
+            // console.log(res , ' this is res from 54 ')
+
+        // const userDetails = [ req.user.id ]
+        //     db.query('SELECT * FROM products WHERE user_id=$1', userDetails, (error, results) => {
+        //       if (error) {
+        //           console.log('this is error from savedArticles')
+        //         throw console.log(error, 'this is throw error')
+        //       }
+        //       console.log(req, 'this is res from savedArticles line 52')
+
+        //       console.log(res, 'this is res from savedArticles line 54')
+        //       res.status(200).json(results.rows)
+        //       console.log(results, 'this is results from savedArticles express route')
+        //     }).catch(err=>next(err, console.log(err, 'this is err')))
+        //     // next()
 
     }
     //         36
