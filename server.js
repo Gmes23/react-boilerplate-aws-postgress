@@ -43,6 +43,21 @@ app.use(express.static('public'))
 
 app.use('/api', require('./api'))
 
+
+//db request 
+const pool = require('./db/configForUserData.js')
+
+app.get('/savedArticles', (request, response) => {
+  pool.query('SELECT * FROM products', (error, results) => {
+      console.log(results)
+      if (error) {
+        throw error
+      }
+      response.status(200).json(results.rows)
+    })
+})
+
+
 app.use('*', (req, res) => {
   res.status(404).send('Not Found')
 })
