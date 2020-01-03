@@ -5,7 +5,11 @@ const db = require('../../db/config')
 
 module.exports = {
     res: (req, res, next) => {
-        console.log('news-api-first route- got a respond from api');
+        db.query(`SELECT * FROM products`, (db_err, db_res) => {
+            if( db_err) return next(db_err);
+            res.json(db_res)
+            console.log(db_res, 'this is the favorite controller api db_res')
+        }).catch(err=>next(err))
     },
     // favorite: (req, res, next) => {
     //     console.log( res.body , 'hit favorite')

@@ -14,7 +14,7 @@ class UserProfilePage extends Component {
     }
 
     async componentDidMount() {
-        fetch('/api/news/savedArticles')
+        fetch('/api/news/')
         .then(response => console.log(response.json(), 'this is response frorom CDM line 18'))
 
         this.props.dispatch(getProducts())

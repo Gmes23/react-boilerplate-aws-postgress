@@ -6,6 +6,8 @@ const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
 const passport = require('passport')
+//testing this 
+const cors = require('cors')
 
 const app = express()
 
@@ -13,6 +15,11 @@ const PORT = process.env.PORT || 5000
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`)
 })
+
+
+// i added this here
+app.use(cors())
+
 
 app.use(logger('dev'))
 app.use(bodyParser.json())

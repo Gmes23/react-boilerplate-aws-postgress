@@ -19,13 +19,13 @@ const newsRouter = express.Router();
 // homes routes
 newsRouter.get('/', res, send);
 
+newsRouter.get('/savedArticles', savedArticles, send);
 // Gets articles from NEWSAPI.ORG
 newsRouter.post('/favorite', favorite, send);
 
 // Gets user data, this may be moved to user actions folder, 
 // were we place all of what a user can do in our app 
 //will change during reformating 
-newsRouter.get('/savedArticles', savedArticles, send);
 
 
 
