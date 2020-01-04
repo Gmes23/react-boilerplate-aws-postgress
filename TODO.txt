@@ -46,3 +46,7 @@ NOTE:  adding .everyPAGE means every page should have this option
 
     - time thurs dec 26 - 6:37pm start
         `current task get user data from db 
+    
+
+    user logs in , saves article, it renders on page
+    
