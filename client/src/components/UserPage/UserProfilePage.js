@@ -19,7 +19,7 @@ class UserProfilePage extends Component {
         // the data was saved as an object originally to save time,
         // react wont render objects so we can stringify it to render
         // the articles saved
-        console.log(this.props.items.items, 'this is teims')
+        console.log(this.props.items.items, 'this is items')
 
         var items = [JSON.stringify(this.props.items.items)];
 

@@ -50,8 +50,10 @@ const pool = require('./db/configForUserData.js')
 // all fetch request directly from react components need /api
 // before route name
 app.get('/api/savedArticles', (request, response) => {
-  pool.query('SELECT * FROM products', (error, results) => {
-      console.log(results.rows)
+  
+  const userID = request.user.id
+
+  pool.query('SELECT * FROM products WHERE user_id=$1', [userID], (error, results) => {
       if (error) {
         throw error
       }
