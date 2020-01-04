@@ -7,7 +7,7 @@ NOTE:  adding .everyPAGE means every page should have this option
 
 -- Homepage.everyPAGE
     [] Logo that takes you home 
-    [] add a favorite tab. instead of adding things to carts add it to favorites
+    [x] add a favorite tab. instead of adding things to carts add it to favorites
     [] cart button or heart button 
     ### user
         []user sign in 
@@ -24,29 +24,12 @@ NOTE:  adding .everyPAGE means every page should have this option
 - LONG TERM
     - ADMIN PANEL
         -admin own route to log in
-        -
+        
 - Current TODOS for databse 
 
-    - allow users to comment, favorite , or 
-        delete the favorite article.
-
-- TODO Current
-    - make user profile page
-    - have it display articles saved
-        - get respond from database into express route,
-            - render it into the react component
-            - then render that users info into that component
-    - use redux to make sure this component is only accesible when
-        a user is authenticated
-
-    - make sure its not accesible if a user is not authenticated
-
-    - reorganize and reword shopping cart redux components.
-
-
-    - time thurs dec 26 - 6:37pm start
-        `current task get user data from db 
+    [x]allow user to save articles
+    []allow user to delete articles
+    []render page only when user is auth 
+    []render only that user articles with id as key
     
-
-    user logs in , saves article, it renders on page
     

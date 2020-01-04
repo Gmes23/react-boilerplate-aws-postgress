@@ -13,7 +13,6 @@ class UserProfilePage extends Component {
     async componentDidMount() {
 
         this.props.dispatch(fetchArticles())
-        // this.setState({ articles: this.props.items.items})
     }
 
     render() {
@@ -22,19 +21,19 @@ class UserProfilePage extends Component {
         // the articles saved
         console.log(this.props.items.items, 'this is teims')
 
-        var items = JSON.stringify(this.props.items.items);
+        var items = [JSON.stringify(this.props.items.items)];
 
-        // let savedArticles = this.state.articles.map((item) => {
-        //     return <li key={item}>
-        //         <div>{item}</div>
-        //     </li>
-        // });
+        let savedArticles = items.map((item) => {
+            return <li key={item}>
+                <div>{item}</div>
+            </li>
+        });
         return (
             <div>
                 <h1>USER PROFILE</h1>
                 <ul>
-                    {/* {savedArticles} */}
-                    {items}
+                    {savedArticles}
+                    {/* {items} */}
                 </ul>
             </div>
 
