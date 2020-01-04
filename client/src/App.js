@@ -42,6 +42,7 @@ class App extends Component {
         isAuth
       }
     } = this.props
+    
     return (
       <div className="App">
         <div>

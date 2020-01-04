@@ -4,8 +4,12 @@ import { routerReducer } from 'react-router-redux'
 import { auth } from './auth'
 import shoppingCart from './shoppingCart'
 
+// This gets the user article state from the 
+// article action
+import articles from '../actions/articles.js'
+
 export default combineReducers({
   routing: routerReducer,
   auth,
-  item: shoppingCart
+  items: articles
 })

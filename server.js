@@ -47,9 +47,11 @@ app.use('/api', require('./api'))
 //db request 
 const pool = require('./db/configForUserData.js')
 
-app.get('/savedArticles', (request, response) => {
+// all fetch request directly from react components need /api
+// before route name
+app.get('/api/savedArticles', (request, response) => {
   pool.query('SELECT * FROM products', (error, results) => {
-      console.log(results)
+      console.log(results.rows)
       if (error) {
         throw error
       }

@@ -157,7 +157,7 @@ export function getProducts(item) {
       console.log(item, ' getproducts')
 
     dispatch(fetchProductsBegin());
-    return fetch('/api/news/savedArticles',
+    return fetch('/api/savedArticles',
      { 
          credentials: 'include',
          method: 'GET',
