@@ -42,7 +42,7 @@ class App extends Component {
         isAuth
       }
     } = this.props
-    
+
     return (
       <div className="App">
         <div>
@@ -66,7 +66,7 @@ class App extends Component {
 
           <Route exact path="/admin" component={Admin} />
 
-          <Route exact path="/User" component={UserProfilePage} />
+          {isAuth ? (<Route exact path="/User" component={UserProfilePage} />) : <div></div>}
 
           <Route component={NotFound} />
 

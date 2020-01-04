@@ -24,12 +24,12 @@ NOTE:  adding .everyPAGE means every page should have this option
 - LONG TERM
     - ADMIN PANEL
         -admin own route to log in
-        
+
 - Current TODOS for databse 
 
     [x]allow user to save articles
     []allow user to delete articles
-    []render page only when user is auth 
+    [x]render page only when user is auth 
     []render only that user articles with id as key
     
     
