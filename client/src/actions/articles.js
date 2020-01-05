@@ -43,7 +43,7 @@ export function deleteArticles(item) {
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: item
+                    body: JSON.stringify({ item })
                 })
                 .then(handleErrors)
                 .then(res => res.json())

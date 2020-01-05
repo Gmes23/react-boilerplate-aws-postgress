@@ -11,6 +11,7 @@ class UserProfilePage extends Component {
         super(props);
     }
 
+    // this might need to be change to component did update
     async componentDidMount() {
 
         this.props.dispatch(fetchArticles())
@@ -27,15 +28,26 @@ class UserProfilePage extends Component {
         // the articles saved
         console.log(this.props.items.items, 'this is items')
 
-        var items = [JSON.stringify(this.props.items)];
+        var items = this.props.items.items;
 
         let savedArticles = items.map((item) => {
             return <li key={item}>
-                    <div>{item}</div>
+                    <div>{item.body}</div>
                     <button onClick={() => this.handleClickDeleteItem(item)}>DELETE</button>
 
                   </li>
         });
+
+        // var items = [JSON.stringify(this.props.items.items)];
+
+        // let savedArticles = items.map((item) => {
+        //     return <li key={item.date_created}>
+        //       <div>{item.author}</div>
+        //       <div>{item.body}</div>
+        //       <button onClick={() => this.handleClickDeleteItem(item)}>DELETE</button>
+  
+        //     </li>
+        //   });
         return (
             <div>
                 <h1>USER PROFILE</h1>

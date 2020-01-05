@@ -63,9 +63,11 @@ app.get('/api/savedArticles', (request, response) => {
 
 app.delete('/api/deleteArticles', (request, response) => {
   
-  const userID = request.body.items.pid
+  // this needs to be change to represent its bame
+  console.log(request.body.item.pid, 'this is deletearticles tt')
+  const userID = request.body.item.pid
 
-  pool.query('SELECT FROM products WHERE pid=$1', [userID], (error, results) => {
+  pool.query('DELETE FROM products WHERE pid=$1', [userID], (error, results) => {
       if (error) {
         throw error
       }
