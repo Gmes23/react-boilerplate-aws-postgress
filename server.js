@@ -61,6 +61,19 @@ app.get('/api/savedArticles', (request, response) => {
     })
 })
 
+app.delete('/api/deleteArticles', (request, response) => {
+  
+  const userID = request.body.items.pid
+
+  pool.query('SELECT FROM products WHERE pid=$1', [userID], (error, results) => {
+      if (error) {
+        throw error
+      }
+      response.status(200).json(results.rows)
+    })
+})
+
+
 
 app.use('*', (req, res) => {
   res.status(404).send('Not Found')

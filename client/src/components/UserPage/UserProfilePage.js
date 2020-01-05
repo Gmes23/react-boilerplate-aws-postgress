@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Axios from 'axios';
 
-import { fetchArticles } from '../../actions/articles'
+import { fetchArticles, deleteArticles } from '../../actions/articles'
+// import deleteArticles from '../../actions/articles'
+
 
 
 class UserProfilePage extends Component {
@@ -15,25 +16,31 @@ class UserProfilePage extends Component {
         this.props.dispatch(fetchArticles())
     }
 
+    handleClickDeleteItem(item) {
+        // console.log(item, ' this is handleCLickDeleteItem')
+        this.props.deleteArticles(item)
+    }
+
     render() {
         // the data was saved as an object originally to save time,
         // react wont render objects so we can stringify it to render
         // the articles saved
         console.log(this.props.items.items, 'this is items')
 
-        var items = [JSON.stringify(this.props.items.items)];
+        var items = [JSON.stringify(this.props.items)];
 
         let savedArticles = items.map((item) => {
             return <li key={item}>
-                <div>{item}</div>
-            </li>
+                    <div>{item}</div>
+                    <button onClick={() => this.handleClickDeleteItem(item)}>DELETE</button>
+
+                  </li>
         });
         return (
             <div>
                 <h1>USER PROFILE</h1>
                 <ul>
                     {savedArticles}
-                    {/* {items} */}
                 </ul>
             </div>
 
@@ -44,9 +51,27 @@ class UserProfilePage extends Component {
 const mapStateToProps = (state) => ({
     ...state
 })
-const mapDispatchToProps = dispatch => ({
-    fetchArticles: () => dispatch(fetchArticles()),
-    dispatch
-});
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+      // dispatching plain actions
+      fetchArticles: () => dispatch(fetchArticles()),
+      deleteArticles: item => {
+        console.log(item)
+        dispatch(deleteArticles(item))},
+        dispatch
+    }
+  }
+
+//   const mapDispatchToProps = (dispatch, item) => {
+//     return {
+//       handleClickDeleteIteme: () => {
+//         dispatch(deleteArticles(item));
+//       },
+//       fetchArticles: () => dispatch(fetchArticles()),
+//       dispatch
+
+//     };
+//   };
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserProfilePage);

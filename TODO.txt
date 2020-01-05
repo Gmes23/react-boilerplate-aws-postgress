@@ -29,7 +29,8 @@ NOTE:  adding .everyPAGE means every page should have this option
 
     [x]allow user to save articles
     []allow user to delete articles
+        - user can only delete front end data not back end
     [x]render page only when user is auth 
-    []render only that user articles with id as key
+    [x]render only that user articles with id as key
     
     

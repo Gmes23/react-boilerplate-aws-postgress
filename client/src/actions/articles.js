@@ -27,6 +27,34 @@ export function fetchArticles() {
             .catch(error => dispatch(fetchArticlesFailure(error)));
     };
 }
+
+
+export function deleteArticles(item) {
+    return (dispatch, getState) => {
+        const userDetails = getState();
+
+        console.log(item, 'this is item from delete articles')
+
+            dispatch(fetchArticlesBegin());
+            return fetch('/api/deleteArticles',
+                {
+                    credentials: 'include',
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: item
+                })
+                .then(handleErrors)
+                .then(res => res.json())
+                .then(articles => {
+                    dispatch(fetchArticlesSuccess(articles));
+                    return articles;
+                })
+                .catch(error => dispatch(fetchArticlesFailure(error)));
+    };
+}
+
 //   Handle HTTP errors since fetch won't.
 function handleErrors(response) {
     if (!response.ok) {

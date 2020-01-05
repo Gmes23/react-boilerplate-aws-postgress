@@ -56,3 +56,6 @@ export const logoutUser = user => dispatch => {
   .then(({ user, isAuth }) => dispatch(setUser(user, isAuth)))
   .catch(err => console.log(err))
 }
+
+
+

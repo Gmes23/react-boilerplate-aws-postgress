@@ -66,7 +66,7 @@ class App extends Component {
 
           <Route exact path="/admin" component={Admin} />
 
-          {isAuth ? (<Route exact path="/User" component={UserProfilePage} />) : <div></div>}
+          <Route exact path="/User" component={UserProfilePage} />
 
           <Route component={NotFound} />
 
