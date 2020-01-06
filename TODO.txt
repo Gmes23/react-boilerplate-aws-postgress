@@ -30,8 +30,9 @@ NOTE:  adding .everyPAGE means every page should have this option
     [x]allow user to save articles
     []allow user to delete articles
         -[x] user can only delete front end data not back end
-        - [] when deleting a saved article the back end deletes it but it does not update the component
+        -[] when deleting a saved article the back end deletes it but it does not update the component
     [x]render page only when user is auth 
     [x]render only that user articles with id as key
     [] refactor codebase
-    
+    [] make search render items from api 
+        -[] give articles tags
