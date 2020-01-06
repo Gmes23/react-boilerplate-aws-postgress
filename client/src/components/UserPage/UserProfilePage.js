@@ -31,7 +31,7 @@ class UserProfilePage extends Component {
         var items = this.props.items.items;
 
         let savedArticles = items.map((item) => {
-            return <li key={item}>
+            return <li key={item.pid}>
                     <div>{item.body}</div>
                     <button onClick={() => this.handleClickDeleteItem(item)}>DELETE</button>
 
