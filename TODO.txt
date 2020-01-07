@@ -33,6 +33,6 @@ NOTE:  adding .everyPAGE means every page should have this option
         -[] when deleting a saved article the back end deletes it but it does not update the component
     [x]render page only when user is auth 
     [x]render only that user articles with id as key
-    [] refactor codebase
+    [] refactor codebase-[]refactor redux , rename pages
     [] make search render items from api 
         -[] give articles tags
