@@ -34,5 +34,5 @@ NOTE:  adding .everyPAGE means every page should have this option
     [x]render page only when user is auth 
     [x]render only that user articles with id as key
     [] refactor codebase-[]refactor redux , rename pages
-    [] make search render items from api 
+    [] make search render items from api.
         -[] give articles tags
