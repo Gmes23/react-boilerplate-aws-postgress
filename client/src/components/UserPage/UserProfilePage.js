@@ -9,18 +9,35 @@ import { fetchArticles, deleteArticles } from '../../actions/articles'
 class UserProfilePage extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            articles: []
+        }
     }
 
     // this might need to be change to component did update
     async componentDidMount() {
 
         this.props.dispatch(fetchArticles())
+       this.setState({ articles: this.props.dispatch(fetchArticles()) })
+    //    console.log(this.state, 'testing 234')
     }
 
+   
     handleClickDeleteItem(item) {
         // console.log(item, ' this is handleCLickDeleteItem')
-        this.props.deleteArticles(item)
+        // this.setState({ articles : this.props.deleteArticles(item) })
+        this.props.deleteArticles(item);
+        this.setState({ articles: this.props.dispatch(fetchArticles()) })
+
+
     }
+    
+    // handleClickDeleteItem = itemID  => {
+    //     // console.log(itemID, this.state.articles.pid , 'this is itemID ')
+    //     // const articles = this.state.articles.filter(i => i.pid !== itemID);
+    //     // this.setState({ articles: articles });
+    //     // this.props.deleteArticles(itemID);
+    // }
 
     render() {
         // the data was saved as an object originally to save time,
@@ -33,7 +50,9 @@ class UserProfilePage extends Component {
         let savedArticles = items.map((item) => {
             return <li key={item.pid}>
                     <div>{item.body}</div>
-                    <button onClick={() => this.handleClickDeleteItem(item)}>DELETE</button>
+                    {/* <button onClick={() => this.handleClickDeleteItem(item)}>DELETE</button>
+                     */}
+                     <button onClick={() => this.handleClickDeleteItem(item)}> DELETE </button>>
 
                   </li>
         });
