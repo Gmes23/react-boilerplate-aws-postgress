@@ -32,6 +32,7 @@ NOTE:  adding .everyPAGE means every page should have this option
         -[x] user can only delete front end data not back end
         -[x] when deleting a saved article the back end deletes it but it does not update the component
         -[] items tend to flash when deleting them 
+        -[] check to see if deleted items can be render via props
     [x]render page only when user is auth 
     [x]render only that user articles with id as key
     [] refactor codebase-[]refactor redux , rename pages
