@@ -2,8 +2,6 @@
 // can save articles to their page, and only logged in user can see their saved 
 // articles
 
-
-
 export function fetchArticles() {
     return (dispatch, getState) => {
         const userDetails = getState();

@@ -9,64 +9,32 @@ import { fetchArticles, deleteArticles } from '../../actions/articles'
 class UserProfilePage extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            articles: []
-        }
     }
 
-    // this might need to be change to component did update
     async componentDidMount() {
-
         this.props.dispatch(fetchArticles())
-       this.setState({ articles: this.props.dispatch(fetchArticles()) })
-    //    console.log(this.state, 'testing 234')
     }
 
-   
     handleClickDeleteItem(item) {
-        // console.log(item, ' this is handleCLickDeleteItem')
-        // this.setState({ articles : this.props.deleteArticles(item) })
         this.props.deleteArticles(item);
-        this.setState({ articles: this.props.dispatch(fetchArticles()) })
-
-
+        this.props.dispatch(fetchArticles())
     }
-    
-    // handleClickDeleteItem = itemID  => {
-    //     // console.log(itemID, this.state.articles.pid , 'this is itemID ')
-    //     // const articles = this.state.articles.filter(i => i.pid !== itemID);
-    //     // this.setState({ articles: articles });
-    //     // this.props.deleteArticles(itemID);
-    // }
+
 
     render() {
-        // the data was saved as an object originally to save time,
-        // react wont render objects so we can stringify it to render
-        // the articles saved
-        console.log(this.props.items.items, 'this is items')
+   
 
         var items = this.props.items.items;
 
         let savedArticles = items.map((item) => {
             return <li key={item.pid}>
                     <div>{item.body}</div>
-                    {/* <button onClick={() => this.handleClickDeleteItem(item)}>DELETE</button>
-                     */}
                      <button onClick={() => this.handleClickDeleteItem(item)}> DELETE </button>>
 
                   </li>
         });
 
-        // var items = [JSON.stringify(this.props.items.items)];
-
-        // let savedArticles = items.map((item) => {
-        //     return <li key={item.date_created}>
-        //       <div>{item.author}</div>
-        //       <div>{item.body}</div>
-        //       <button onClick={() => this.handleClickDeleteItem(item)}>DELETE</button>
-  
-        //     </li>
-        //   });
+    
         return (
             <div>
                 <h1>USER PROFILE</h1>
@@ -94,15 +62,6 @@ const mapDispatchToProps = (dispatch) => {
     }
   }
 
-//   const mapDispatchToProps = (dispatch, item) => {
-//     return {
-//       handleClickDeleteIteme: () => {
-//         dispatch(deleteArticles(item));
-//       },
-//       fetchArticles: () => dispatch(fetchArticles()),
-//       dispatch
 
-//     };
-//   };
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserProfilePage);
