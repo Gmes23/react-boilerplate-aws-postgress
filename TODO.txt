@@ -1,40 +1,8 @@
-### user flow diagram
+### TODOS
 
-    []Logo.everyPAGE
+-[] Refactor Code
 
+-[] Make 404 page only show up when its a 404 route
 
-NOTE:  adding .everyPAGE means every page should have this option
-
--- Homepage.everyPAGE
-    [] Logo that takes you home 
-    [x] add a favorite tab. instead of adding things to carts add it to favorites
-    [] cart button or heart button 
-    ### user
-        []user sign in 
-            -[] if wrong addresses show it 
-            -[] reset the boxes
-        [] user sign up 
-            -[] if not the right regex show message
-        [] allow users to buy of items, check out items 
-        [] profile page, shows history.
-        
-    -- search button.everyPAGE
-    -- Contact Page.everyPAGE..
-
-- LONG TERM
-    - ADMIN PANEL
-        -admin own route to log in
-
-- Current TODOS for databse 
-
-    [x]allow user to save articles
-    [x]allow user to delete articles
-        -[x] user can only delete front end data not back end
-        -[x] when deleting a saved article the back end deletes it but it does not update the component
-        -[] items tend to flash when deleting them 
-        -[] check to see if deleted items can be render via props
-    [x]render page only when user is auth 
-    [x]render only that user articles with id as key
-    [] refactor codebase-[]refactor redux , rename pages
-    [] make search render items from api.
-        -[] give articles tags
+-[] Get rid of useless constructor bugs
+-[] index.js:1 Warning: Please use `require("history").createBrowserHistory` instead of `require("history/createBrowserHistory")`. Support for the latter will be removed in the next major release.

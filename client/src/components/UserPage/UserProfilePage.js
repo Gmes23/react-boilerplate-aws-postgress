@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
 import { fetchArticles, deleteArticles } from '../../actions/articles'
-// import deleteArticles from '../../actions/articles'
-
-
 
 class UserProfilePage extends Component {
     constructor(props) {
@@ -22,19 +18,19 @@ class UserProfilePage extends Component {
 
 
     render() {
-   
+
 
         var items = this.props.items.items;
 
         let savedArticles = items.map((item) => {
             return <li key={item.pid}>
-                    <div>{item.body}</div>
-                     <button onClick={() => this.handleClickDeleteItem(item)}> DELETE </button>>
+                <div>{item.body}</div>
+                <button onClick={() => this.handleClickDeleteItem(item)}> DELETE </button>>
 
                   </li>
         });
 
-    
+
         return (
             <div>
                 <h1>USER PROFILE</h1>
@@ -53,14 +49,13 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
     return {
-      // dispatching plain actions
-      fetchArticles: () => dispatch(fetchArticles()),
-      deleteArticles: item => {
-        console.log(item)
-        dispatch(deleteArticles(item))},
+        fetchArticles: () => dispatch(fetchArticles()),
+        deleteArticles: item => {
+            dispatch(deleteArticles(item))
+        },
         dispatch
     }
-  }
+}
 
 
 

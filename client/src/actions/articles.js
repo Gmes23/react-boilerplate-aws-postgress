@@ -3,10 +3,8 @@
 // articles
 
 export function fetchArticles() {
-    return (dispatch, getState) => {
-        const userDetails = getState();
-        console.log(userDetails, 'get userDetails from getArticles action')
-
+    return (dispatch) => {
+       
         dispatch(fetchArticlesBegin());
         return fetch('/api/savedArticles',
             {
@@ -28,11 +26,8 @@ export function fetchArticles() {
 
 
 export function deleteArticles(item) {
-    return (dispatch, getState) => {
-        const userDetails = getState();
-
-        console.log(item, 'this is item from delete articles')
-
+    return (dispatch) => {
+        
             dispatch(fetchArticlesBegin());
             return fetch('/api/deleteArticles',
                 {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 // Partials 
@@ -28,8 +28,6 @@ import { verifyUser } from './actions/auth'
 
 // 404 page 
 import NotFound from './components/NotFound/NotFound'
-
-
 
 class App extends Component {
   componentDidMount() {
