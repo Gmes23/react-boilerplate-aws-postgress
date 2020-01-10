@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 /* 
     TODO
     allow admin to post to db , still need to create node route and db schema 
+    this is for when the boilerplate gets change into a store boilerplate
 */ 
 class Admin extends Component {
   constructor() {

@@ -6,3 +6,7 @@
 
 -[] Get rid of useless constructor bugs
 -[] index.js:1 Warning: Please use `require("history").createBrowserHistory` instead of `require("history/createBrowserHistory")`. Support for the latter will be removed in the next major release.
+-[] make a delete articles action where it refreshes the global state by fetching again 
+
+__User Auth
+    - [] Hide the favorite button from non logged in users

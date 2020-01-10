@@ -6,7 +6,6 @@ const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
 const passport = require('passport')
-//testing this 
 const cors = require('cors')
 
 const app = express()
@@ -17,10 +16,7 @@ app.listen(PORT, () => {
 })
 
 
-// i added this here
 app.use(cors())
-
-
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -47,8 +43,7 @@ app.use('/api', require('./api'))
 //db request 
 const pool = require('./db/configForUserData.js')
 
-// all fetch request directly from react components need /api
-// before route name
+// All fetch request directly from react components need /api before route name
 app.get('/api/savedArticles', (request, response) => {
   
   const userID = request.user.id
@@ -63,11 +58,10 @@ app.get('/api/savedArticles', (request, response) => {
 
 app.delete('/api/deleteArticles', (request, response) => {
   
-  // this needs to be change to represent its bame
-  console.log(request.body.item.pid, 'this is deletearticles tt')
-  const userID = request.body.item.pid
+  // Gets the product ID from the front end and matches it to one in the database
+  const productID = request.body.item.pid
 
-  pool.query('DELETE FROM products WHERE pid=$1', [userID], (error, results) => {
+  pool.query('DELETE FROM products WHERE pid=$1', [productID], (error, results) => {
       if (error) {
         throw error
       }
