@@ -13,8 +13,7 @@ module.exports = {
     },
 
     favorite: (req, res, next) => {
-        //object gotten from shoppingCart
-        //react component threw redux action
+        
         const favoriteItem = [  req.body,
                                 req.user.id ]
 
