@@ -3,15 +3,6 @@
 const db = require('../../db/config')
 
 module.exports = {
-    res: (req, res, next) => {
-        db.query(`SELECT * FROM products`, (db_err, db_res) => {
-            console.log(db_err, 'this is the favorite controller api db_res')
-
-            if( db_err) return next(db_err);
-            res.json(db_res)
-        }).catch(err=>next(err))
-    },
-
     favorite: (req, res, next) => {
         
         const favoriteItem = [  req.body,
@@ -24,7 +15,6 @@ module.exports = {
                     )`, favoriteItem, (db_err, db_res) => {
                     if( db_err) return next(db_err);
                     res.json(db_res)
-                    console.log(db_res, 'this is the favorite controller api db_res')
                 }).catch(err=>next(err))
     },
 }
