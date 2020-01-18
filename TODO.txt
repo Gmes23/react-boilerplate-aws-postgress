@@ -9,7 +9,7 @@
 -[] make a delete articles action where it refreshes the global state by fetching again 
 
 __User Auth
-    - [] Hide the favorite button from non logged in users
+    - [] Hide the favorite button from non logged in users,
 
 __API
     -[] hide api secret keys
