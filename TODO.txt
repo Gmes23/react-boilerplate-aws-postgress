@@ -12,4 +12,4 @@ __User Auth
     - [] Hide the favorite button from non logged in users,
 
 __API
-    -[] hide api secret keys
+    -[] hide api secret keys.
